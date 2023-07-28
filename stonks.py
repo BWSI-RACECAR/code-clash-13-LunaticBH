@@ -49,11 +49,11 @@ class Solution:
             for i in range(len(prices)):
                 if times == 2:
                     return profit
-                if prices[i] > prices[i+1]:
+                if prices[i] > prices[i+1] and not None:
                     pass
                 elif None:
                     break
-                elif prices[i] > prices[i+1]:
+                elif prices[i] > prices[i+1] and not None:
                     for j in range(i,len(prices)):
                         if prices[i] < prices[j]:
                             max = prices[j]
@@ -65,10 +65,6 @@ class Solution:
                             break
                         else:
                             pass
-
-                        
-                        
-                        
             pass
 
 def main():
