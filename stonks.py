@@ -46,7 +46,7 @@ class Solution:
             max = 0
             times = 0
             i = 0
-            for i in range(len(prices)):
+            for i in range(len(prices)-1):
                 if times == 2:
                     return profit
                 if prices[i] > prices[i+1] and not None:
