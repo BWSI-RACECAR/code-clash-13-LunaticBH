@@ -66,19 +66,19 @@ class Solution:
             #             else:
             #                 pass
             profit_1 = []
-            min_1 = 0
+            min_1 = 100000
             max_1 = 0
-            for i in prices:
-                if min_1 > i:
-                    min_1 = i
+            for x in prices:
+                if min_1 > x:
+                    min_1 = x
                 else:
-                    max_1 = max(max_1, i - min_1)
+                    max_1 = max(max_1, x - min_1)
                 profit_1.append(max_1)
             
             profit_2 = [0] * len(prices)
             maxo_2 = 0
             maxr_2 = 0
-            for j in range(len(prices) - 1, -1, -1):
+            for i in range(len(prices) - 1, -1, -1):
                 x = prices[i]
                 if x > maxr_2:
                     maxr_2 = i
@@ -92,8 +92,6 @@ class Solution:
                 if sum > max_profit:
                     max_profit = sum
             return max_profit
-
-            return profit_1
 
 def main():
     array = input().split(" ")
