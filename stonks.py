@@ -65,7 +65,6 @@ class Solution:
                             break
                         else:
                             pass
-            pass
 
 def main():
     array = input().split(" ")
