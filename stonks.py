@@ -65,7 +65,7 @@ class Solution:
                             break
                         else:
                             pass
-            return prices
+            return profit
 
 def main():
     array = input().split(" ")
