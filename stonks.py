@@ -39,59 +39,14 @@ Total profit = 4 + 8 = 12.
 
 class Solution:
     def stonks(self, prices):
-            #type prices: list of int
-            #return type: int
-            
-            # profit = 0
-            # max = 0
-            # times = 0
-            # i = 0
-            # for i in range(len(prices)):
-            #     if times == 2:
-            #         return profit
-            #     if prices[i] > prices[i+1]:
-            #         pass
-            #     elif None:
-            #         break
-            #     elif prices[i] > prices[i+1]:
-            #         for j in range(i,len(prices)):
-            #             if prices[i] < prices[j]:
-            #                 max = prices[j]
-            #                 pass
-            #             elif prices[i] > prices[j] or max > prices[j]:
-            #                 profit += (max - prices[i])
-            #                 i = j
-            #                 times += 1
-            #                 break
-            #             else:
-            #                 pass
-            profit_1 = []
-            min_1 = 100000
-            max_1 = 0
-            for x in prices:
-                if min_1 > x:
-                    min_1 = x
-                else:
-                    max_1 = max(max_1, x - min_1)
-                profit_1.append(max_1)
-            
-            profit_2 = [0] * len(prices)
-            maxo_2 = 0
-            maxr_2 = 0
-            for i in range(len(prices) - 1, -1, -1):
-                x = prices[i]
-                if x > maxr_2:
-                    maxr_2 = i
-                else:
-                    maxo_2 = max(maxo_2, maxr_2 - 1)
-                profit_2[i] = maxo_2
-            
-            max_profit = 0
-            for i in range(len(prices)):
-                sum = profit_1[i] + profit_2[i]
-                if sum > max_profit:
-                    max_profit = sum
-            return max_profit
+      maxprofit=0
+      length=len(prices)
+      for i in range(length):
+        for j in range(i+1):
+          for k in range(j):
+            for l in range(k+1):
+              maxprofit=max(maxprofit, prices[i]-prices[j]+prices[k]-prices[l])
+      return maxprofit
 
 def main():
     array = input().split(" ")
